@@ -1,6 +1,6 @@
 # Introduction
 
-This project summary encompasses the several implementations of mine surrounding concise yet intuitive machine learning concepts. The data used for each implementation have been simplified for both computational runtime and general comprehension purposes, however their key variances have been preserved even in cases where some of the dimensions have been reduced drastically. 
+This project summary encompasses the several implementations of mine that surround concise yet intuitive machine learning concepts. The data used for each implementation have been simplified for both computational runtime and general comprehension purposes, however their key variances have been preserved even in cases where some of the dimensions have been reduced drastically. 
 
 # Table of Contents
 
@@ -65,7 +65,30 @@ We can also express this as a product between a matrix (X) and a vector of these
 
 Now to add a bias term, which allows the model to "unpin" its decision boundary from the origin. The model we trained in the previous section did not have a constant offset (called a bias) in the model – computing wT x rather than wT x + b. A simple way to include this in our model is to add an new column to X that has all ones in it. This way, the first weight in our weight vector will always be multiplied by 1 and added.
 
-Below are the results 
+Below are the results:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/250a260b74ed7b42b934dbd283f6503a75ba0edc/re.JPG" alt="Image"></kbd>
+
+The code now also produces a plot showing the negative log-likelihood for the bias and no-bias models over the course of training. If we change the learning rate (also called the step size), we could see significant differences in how this plot behaves – and in our accuracies.
+Below are a few example resulting models:
+
+Step Size = 0.00001
+Unbiased Train accuracy: 85.62%
+Biased Train accuracy: 90.77%
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/d0e5da631ffc6d45067106655a46be86f371239a/0.00001.JPG" alt="Image"></kbd>
+
+Step Size = 0.0001
+Unbiased Train accuracy: 86.27%
+Biased Train accuracy: 96.35%
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/bf733f03e7fbcb08188828caef331a7d1ef0b191/0.0001.JPG" alt="Image"></kbd>
+
+Step Size = 0.1
+Unbiased Train accuracy: 83.69%
+Biased Train accuracy: 95.28%
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/9a16f2639a00b47d1d5bd7f3c53347ed3e9b19e0/0.1.JPG" alt="Image"></kbd>
 
 # Simple Neural Network
 
