@@ -67,7 +67,7 @@ Now to add a bias term, which allows the model to "unpin" its decision boundary 
 
 Below are the results:
 
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/250a260b74ed7b42b934dbd283f6503a75ba0edc/re.JPG" alt="Image"></kbd>
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/250a260b74ed7b42b934dbd283f6503a75ba0edc/re.JPG" alt="Image" width="500"></kbd>
 
 The code now also produces a plot showing the negative log-likelihood for the bias and no-bias models over the course of training. If we change the learning rate (also called the step size), we could see significant differences in how this plot behaves – and in our accuracies.
 Below are a few example resulting models:
@@ -76,13 +76,13 @@ Step Size = 0.00001
 Unbiased Train accuracy: 85.62%
 Biased Train accuracy: 90.77%
 
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/d0e5da631ffc6d45067106655a46be86f371239a/0.00001.JPG" alt="Image"></kbd>
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/d0e5da631ffc6d45067106655a46be86f371239a/0.00001.JPG" alt="Image" width="500"></kbd>
 
 Step Size = 0.0001
 Unbiased Train accuracy: 86.27%
 Biased Train accuracy: 96.35%
 
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/bf733f03e7fbcb08188828caef331a7d1ef0b191/0.0001.JPG" alt="Image"></kbd>
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/bf733f03e7fbcb08188828caef331a7d1ef0b191/0.0001.JPG" alt="Image" width="500"></kbd>
 
 Step Size = 0.1
 Unbiased Train accuracy: 83.69%
