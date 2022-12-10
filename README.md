@@ -143,16 +143,22 @@ Neural networks have many hyperparameters. These range from architectural choice
 Optimization parameters in Stochastic Gradient Descent are very inter-related. Large batch sizes mean less noisy estimates of the gradient, so larger step sizes could be used. But larger batch sizes also mean fewer gradient updates per epoch, so we might need to increase the max epochs. Getting a good set of parameters that work well can be tricky and requires checking the validation set performance. Further, these “good parameters” will vary model-to-model.
 
 Model for Step size: 0.0001
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/ed3cef3727eb78bba41286f30862c05d07a79380/0.00012.JPG" width="600"></kbd>
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/ed3cef3727eb78bba41286f30862c05d07a79380/0.00012.JPG" width="500"></kbd>
 
 Model for Step size: 5
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/93283c9b6bf8c91dca07515112abb12d49c7403c/5.JPG" width="600"></kbd>
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/93283c9b6bf8c91dca07515112abb12d49c7403c/5.JPG" width="500"></kbd>
 
 As networks get deeper (or have more layers) they tend to become able to fit more complex functions (though this also may lead to overfitting). However, this also means the backpropagated gradient has many product terms before reaching lower levels – resulting in the magnitude of the gradients being relatively small. This has the effect of making learning slower. Certain activation functions make this better or worse depending on the shape of their derivative. One popular choice is to use a Rectified Linear Unit or ReLU activation that computes:
 
 ReLU(x) = max(0, x)
 
+Default Sigmoid Model:
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/2b4f7210332fb883a7b1ca6bf2dc157b0e584085/4324.JPG" width="500"></kbd>
 
+ReLU Activation Function Model:
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/477ade7119b5d7844e9f469483051ab170e870fe/relu.JPG" width="500"></kbd>
 
 # k-Means Clustering
 
