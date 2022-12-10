@@ -162,5 +162,48 @@ ReLU Activation Function Model:
 
 <kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/477ade7119b5d7844e9f469483051ab170e870fe/relu.JPG" width="500"></kbd>
 
+Finally, code at the end of main() outputs predictions for the test set to test_predicted_3.csv. Once again, hyperparameters can be adjusted for higher prediction accuracy.
+
 # k-Means Clustering
 
+The goal is to develop a running implementation for k-Means clustering and apply it to a more sophisticated unsorted image collection problem.
+
+Given an input dataset X = {xi} n i=1 1 and the number of clusters k, k-Means produces a set of assignments Z = {zi} n i=1 where zi ∈ {1, 2, ..., k} mapping each point to a one of the k clusters and a set of k cluster centers C = {cj} k j=1 (also referred to as centroids). The k-Means algorithm attempts to minimize the sum-of-squared-error (SSE) between each datapoint and it’s assigned centroid – we can write this objective as
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/da6644e91228995f4c4488d80efd847a5fe7b505/Ob.JPG" width="500"></kbd>
+
+where czi is the centroid vector that point i is assigned to. k-Means tries to minimize this objective by alternating between two stages updating either the assignments or the centroids:
+
+**1. Update Assignments** For each point xi , compute which centroid is closest (i.e., has the minimum distance) and set zi to the id of this nearest centroid.
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/326f8437b9a992fceb8bf31eb388b2ea784b9d7a/UA.JPG" width="500"></kbd>
+
+**1. Update Centroids** For each centroid cj , update its value as the mean of all assigned points:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/25d0a16705db75b040f79e67d9749cb32f9b1fb0/UC.JPG" width="500"></kbd>
+
+The figure below demonstrates this process for two iterations on a simple problem. The centroids shown as large circles with black borders are initialized randomly. In the first assignment step (a), points are colored according to the nearest centroid. Then in the update step (b), the centroids are moved to the mean of their assigned points. The process repeats in iteration 2, assignments are updated (c) and then the centroids are updated (d).
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/cb7b1eb29e851cd6fddf385fe363132815d12ce9/Ite.JPG"></kbd>
+
+Now, with the algorithm established, we attempt to figure out clusters in a collection of images.
+
+**Representing Images with HOG** Directly clustering images may not be very successful due to their high dimensionality – even a small 256x256 greyscale image has over 65,000 values. Instead, old-fashion computer vision used to rely on extracting hand-designed features of the image. One such feature is the Histogram of Oriented Gradients (HOG) 5 which captures the direction of different edges in local areas of an image. A couple of examples are shown below:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/d435b7d902313749965007ec2d2959b9b0dbfd28/hog.JPG"></kbd>
+
+where each cell of the HOG feature contains a histogram over 8 orientations, visualized as the star pattern per block. These features are useful for identifying similar structures in images but have since been largely replaced with features from Convolutional Neural Networks in practice. We’ll use them here because they are easy to work with.
+
+From the collection of images, I chose the hyperparameter k as 3, meaning there will be 3 clusters created. The images associated to each cluster by the final iteration are as follows:
+
+Cityscape Cluster
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/f8812428e2b90e96e39bcda530eb75a1f50ce3fd/K1.JPG"></kbd>
+
+Road Cluster
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/f8812428e2b90e96e39bcda530eb75a1f50ce3fd/K2.JPG"></kbd>
+
+Trees Cluster
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/f8812428e2b90e96e39bcda530eb75a1f50ce3fd/K3.JPG"></kbd>
