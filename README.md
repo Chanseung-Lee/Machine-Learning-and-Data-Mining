@@ -155,9 +155,11 @@ As networks get deeper (or have more layers) they tend to become able to fit mor
 ReLU(x) = max(0, x)
 
 Default Sigmoid Model:
+
 <kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/2b4f7210332fb883a7b1ca6bf2dc157b0e584085/4324.JPG" width="500"></kbd>
 
 ReLU Activation Function Model:
+
 <kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/477ade7119b5d7844e9f469483051ab170e870fe/relu.JPG" width="500"></kbd>
 
 # k-Means Clustering
