@@ -92,9 +92,45 @@ Biased Train accuracy: 95.28%
 
 To note: a step size that is too large, such as 0.1, will always miss the optimal value and fail to converage, which explains the rather unpleasant-looking graph.
 
+After printing out K-fold cross validation results (mean and standard deviation of accuracy) for K = 2, 3, 4, 5, 10, 20, and 50, the code will output predictions for the test set to test_predicted_2.csv. Hyperparameters can be adjusted for higher prediction accuracy.
+
 # Simple Neural Network
 
+The goal is to implement a feed-forward neural network model for predicting the value of a drawn digit. We are using a subset of the MNIST dataset commonly used in machine learning research papers. A few example of these handwritten-then-digitized digits from the dataset are shown below:
 
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/ee81f31108a8a612b8c7a4f9f5fef8d1351a7648/ft4.JPG" width="500"></kbd>
+
+Each digit is a 28 × 28 greyscale image with values ranging from 0 to 256. We represent an image as a row vector x ∈ R 1×784 where the image has been serialized into one long vector. Each digit has an associated class label from 0,1,2,...,9 corresponding to its value. We provide three dataset splits for this homework – a training set containing 5000 examples, a validation set containing 1000, and our test set containing 4220 (no labels).
+
+Unlike the previous classification tasks we’ve examined, we have 10 different possible class labels here. How do we measure error of our model? Let’s formalize this a little and say we have a dataset D = {xi , yi} N i=1 with yi ∈ {0, 1, 2, ..., 9}. Assume we have a model f(x; θ) parameterized by a set of parameters θ that predicts P(Y |X = x) (a distribution over our labels given an input). Let’s refer to P(Y = c|X = x) predicted from this model as pc|x for compactness. We can write this output as a categorical distribution:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/73979ebe8de8271a186b4ae236bdbb15c57d2e27/tgr5.JPG" width="500"></kbd>
+
+where I[condition] is the indicator function that is 1 if the condition is true and 0 otherwise. Using this, we can write
+our negative log-likelihood of a single example as as:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/540b910c1174d3cbab42230b5263cab5df6f5e9d/fewer.JPG" width="500"></kbd>
+
+We’ll consider feed-forward neural networks composed of a sequence of linear layers xW1 + b1 and non-linear activation functions g1(·). As such, a network with 3 of these layers stacked together can be written:
+
+b3 + g2(b2 + g1(b1 + x ∗ W1) ∗ W2) ∗ W3
+
+Considering this simple 3-layer neural network, there are quite a few parameters spread out through the function – weight matrices W3, W2, W1 and biases vectors b3, b2, b1. Suppose we would like to find parameters that minimize our loss L that measures our error in the network’s prediction.
+How can we update the weights to reduce this error? Let’s use gradient descent and start by writing out the chain rule for the gradient of each of these. I’ll work backwards from W3 to W1 to expose some structure here.
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/37d858fbe66e47e56431be95964ac907c1c6415c/42.JPG" width="500"></kbd>
+
+As highlighted in color above, we end up reusing the same intermediate terms over and over as we compute derivatives for weights further and further from the output in our network. This suggests the straight-forward backpropagation algorithm for computing these efficiently. Specifically, we will compute these intermediate colored terms starting from the output and working backwards.
+
+One convenient way to implement backpropagation is to consider each layer (or operation) f as having a forward pass that computes the function output normally as:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/8a6f987731c2f011b89b449cabce3d2262868f8c/434343.JPG" width="500"></kbd>
+
+and a backward pass that takes in the gradient up to this point in our backward pass and then outputs the gradient of the loss with respect to its input:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/f3b479af990dd4d79f46cf6afc5199c3b278f9c9/5455454.JPG" width="500"></kbd>
+
+The backward operator will also compute any gradients with respect to parameters of f and store them to be used in a gradient descent update step after the backwards pass.
 
 # k-Means Clustering
 
