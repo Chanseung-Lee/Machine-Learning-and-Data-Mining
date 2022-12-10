@@ -4,10 +4,10 @@ This project summary encompasses the several implementations of mine surrounding
 
 # Table of Contents
 
-- [kNN Classification](#k-Nearest Neighbor Classification and Statistical Estimation)
-- [Linear Model Regression & Classification](#Linear Models for Regression and Classification)
-- [Neural Network](#Simple Neural Network)
-- [Clustering](#k-Means Clustering)
+- [kNN Classification](#k-nearest-neighbor-classification-and-statistical-estimation)
+- [Linear Model Regression & Classification](#linear-models-for-regression-and-classification)
+- [Neural Network](#simple-neural-network)
+- [Clustering](#k-means-clustering)
 
 # k-Nearest Neighbor Classification and Statistical Estimation
 
