@@ -90,6 +90,8 @@ Biased Train accuracy: 95.28%
 
 <kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/9a16f2639a00b47d1d5bd7f3c53347ed3e9b19e0/0.1.JPG" alt="Image" width="500"></kbd>
 
+To note: a step size that is too large, such as 0.1, will always miss the optimal value and fail to converage, which explains the rather unpleasant-looking graph.
+
 # Simple Neural Network
 
 
