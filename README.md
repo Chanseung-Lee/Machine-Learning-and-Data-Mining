@@ -41,7 +41,7 @@ The goal is to implement a logistic regression model for predicting whether a tu
 
 The logistic regression algorithm is a binary classifier that learns a linear decision boundary. Specifically, it predicts the probability of an example x ∈ R d to be class 1 as:
 
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/6fa5674951c4faa681b789d76b5e5e2cc3efd0e0/r.JPG" alt="Image" width="750" height="480"></kbd>
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/6fa5674951c4faa681b789d76b5e5e2cc3efd0e0/r.JPG" alt="Image"></kbd>
 
 
 
