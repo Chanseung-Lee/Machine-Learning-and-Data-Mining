@@ -67,7 +67,7 @@ Now to add a bias term, which allows the model to "unpin" its decision boundary 
 
 Below are the results:
 
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/250a260b74ed7b42b934dbd283f6503a75ba0edc/re.JPG" alt="Image" width="500"></kbd>
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/250a260b74ed7b42b934dbd283f6503a75ba0edc/re.JPG" alt="Image"></kbd>
 
 The code now also produces a plot showing the negative log-likelihood for the bias and no-bias models over the course of training. If we change the learning rate (also called the step size), we could see significant differences in how this plot behaves – and in our accuracies.
 Below are a few example resulting models:
@@ -88,7 +88,7 @@ Step Size = 0.1
 Unbiased Train accuracy: 83.69%
 Biased Train accuracy: 95.28%
 
-<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/9a16f2639a00b47d1d5bd7f3c53347ed3e9b19e0/0.1.JPG" alt="Image"></kbd>
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/9a16f2639a00b47d1d5bd7f3c53347ed3e9b19e0/0.1.JPG" alt="Image" width="500"></kbd>
 
 # Simple Neural Network
 
