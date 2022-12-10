@@ -37,6 +37,12 @@ Finally, code at the end of main() outputs predictions for the test set to test_
 
 # Linear Models for Regression and Classification
 
+The goal is to implement a logistic regression model for predicting whether a tumor is malignant (cancerous) or benign (non-cancerous). The dataset has eight attributes – clump thickness, uniformity of cell size, uniformity of cell shape, marginal adhesion, single epithelial cell size, bland chromatin, nomral nucleoli, and mitoses – all rated between 1 and 10.
+
+The logistic regression algorithm is a binary classifier that learns a linear decision boundary. Specifically, it predicts the probability of an example x ∈ R d to be class 1 as:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/6fa5674951c4faa681b789d76b5e5e2cc3efd0e0/r.JPG" alt="Image" width="750" height="480"></kbd>
+
 
 
 # Simple Neural Network
