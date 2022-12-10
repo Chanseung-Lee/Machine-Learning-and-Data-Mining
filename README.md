@@ -43,7 +43,29 @@ The logistic regression algorithm is a binary classifier that learns a linear de
 
 <kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/6fa5674951c4faa681b789d76b5e5e2cc3efd0e0/r.JPG" alt="Image"></kbd>
 
+where w ∈ R d is a weight vector that we want to learn from data. To estimate these parameters from a dataset of n input-output pairs D, we assumed
+yi ∼ Bernoulli(θ = σ(wT xi)) and wrote the negative log-likelihood:
 
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/a975dd26c6f0427178441e133c3d094fe646ba04/yu.JPG" alt="Image"></kbd>
+
+We want t find optimal weights w∗ = argminw − logP(D|w). However, taking the gradient of the negative log-likelihood yields the expression below which does not offer a closed-form solution.
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/0d49384af71d88cebcb5c46bbe394a07d72e4975/54.JPG" alt="Image"></kbd>
+
+Instead, we opted to minimize −logP(D|w) by gradient descent.
+
+1. Initialize w to some initial vector (all zeros,random, etc)
+2. Repeat until max iterations:
+  (a) w = w − α ∗ ∇w(−logP(D|w))
+  
+For convex functions (and sufficiently small values of the stepsize α), this will converge to the minima.
+We can also express this as a product between a matrix (X) and a vector of these errors. Specifically, assuming the logistic function σ(·) is applied elementwise when given a vector, we could compute:
+
+<kbd><img src="https://github.com/FluffyCrocodile/Storage/blob/8e40fab98b0acd3f5142754ca0dfc9c5b20076ec/dwdw.JPG" alt="Image"></kbd>
+
+Now to add a bias term, which allows the model to "unpin" its decision boundary from the origin. The model we trained in the previous section did not have a constant offset (called a bias) in the model – computing wT x rather than wT x + b. A simple way to include this in our model is to add an new column to X that has all ones in it. This way, the first weight in our weight vector will always be multiplied by 1 and added.
+
+Below are the results 
 
 # Simple Neural Network
 
