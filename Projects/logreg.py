@@ -78,7 +78,7 @@ def main():
     test_out = np.concatenate((np.expand_dims(np.array(range(233), dtype=int), axis=1), y_pred_test), axis=1)
     header = np.array([["id", "type"]])
     test_out = np.concatenate((header, test_out))
-    np.savetxt('test_predicted_hw2.csv', test_out, fmt='%s', delimiter=',')
+    np.savetxt('test_predicted_2.csv', test_out, fmt='%s', delimiter=',')
 
 
 ######################################################################
